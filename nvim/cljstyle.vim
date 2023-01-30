@@ -9,15 +9,19 @@
 
 " This can also go in autoload/cljstyle.vim
 function cljstyle#fix()
-    let cwd = getcwd()
-    let winsave = winsaveview()
-    execute "cd" . expand('%:p:h')
+	if &filetype ==# 'clojure' 
+	    let cwd = getcwd()
+	    let winsave = winsaveview()
+	    execute "cd" . expand('%:p:h')
 
-    :%!cljstyle pipe
+	    :%!cljstyle pipe
 
-    execute "cd" . cwd
-    call winrestview(winsave)
-    :w
+	    execute "cd" . cwd
+	    call winrestview(winsave)
+	    :w
+	else
+		:w
+	endif
 endfunction
 
 " Example shortcut to fix the current file
