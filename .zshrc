@@ -80,6 +80,8 @@ switch-java() {
 }
 switch-java 11 2> /dev/null
 
+export VAULT_ADDR="https://vault.amperity.top:8200"
+
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
