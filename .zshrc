@@ -106,7 +106,7 @@ alias gowebui="cd $HOMEREPO/service/web/web-ui"
 alias gowebapi="cd $HOMEREPO/service/web/web-api"
 alias startuiwatch="gowebui && switch-java 11 && lein refresh && shadow-cljs watch app"
 alias startwebapi="gowebapi && switch-java 1.8 && lein refresh repl"
-alias startwebapicampaign="gowebapi && switch-java 1.8 && lein monolith link campaign-core campaign-service && lein refresh repl"
+alias startwebapicampaigncore="gowebapi && switch-java 1.8 && lein monolith link campaign-core && lein refresh repl"
 
 [[ -f $HOME/.fzf.zsh ]] && . $HOME/.fzf.zsh
 
