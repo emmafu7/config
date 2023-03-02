@@ -54,6 +54,9 @@
   :tpope/vim-repeat {}
   :tpope/vim-surround {}
 
+  ;;nerdtree
+  :preservim/nerdtree {}
+
   ;; parsing system
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
                                     :mod :treesitter}

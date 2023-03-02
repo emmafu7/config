@@ -14,6 +14,7 @@ local autoload = (require("aniseed.autoload")).autoload
 local nvim = autoload("aniseed.nvim")
 do end (_2amodule_locals_2a)["nvim"] = nvim
 nvim.g["conjure#mapping#doc_word"] = "K"
+nvim.g["conjure#log#wrap"] = true
 nvim.g["conjure#client#clojure#nrepl#eval#auto_require"] = false
 nvim.g["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false
 return _2amodule_2a

@@ -6,6 +6,9 @@
 
 ;generic mapping leaders configuration
 (nvim.set_keymap :n :<space> :<nop> {:noremap true})
+(nvim.set_keymap :n :<F12> ":NERDTreeToggle %<CR>" {:noremap true})
+(nvim.set_keymap :n :<F10> ":NERDTree %<CR>" {:noremap true})
+
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ";")
 

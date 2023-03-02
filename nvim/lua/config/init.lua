@@ -17,6 +17,8 @@ _2amodule_locals_2a["nvim"] = nvim
 _2amodule_locals_2a["str"] = str
 _2amodule_locals_2a["util"] = util
 nvim.set_keymap("n", "<space>", "<nop>", {noremap = true})
+nvim.set_keymap("n", "<F12>", ":NERDTreeToggle %<CR>", {noremap = true})
+nvim.set_keymap("n", "<F10>", ":NERDTree %<CR>", {noremap = true})
 nvim.g.mapleader = " "
 nvim.g.maplocalleader = ";"
 nvim.ex.set("nowrap")
