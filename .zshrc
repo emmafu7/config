@@ -81,6 +81,7 @@ switch-java() {
 switch-java 11 2> /dev/null
 
 export VAULT_ADDR="https://vault.amperity.top:8200"
+export VAULT_TOKEN=$(cat ~/.vault-token)
 
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
@@ -104,8 +105,10 @@ export HOMEREPO="$HOME/ws/app"
 alias goapp="cd $HOMEREPO"
 alias gowebui="cd $HOMEREPO/service/web/web-ui"
 alias gowebapi="cd $HOMEREPO/service/web/web-api"
+alias gofoundationsapi="cd $HOMEREPO/service/foundations/foundations-api"
 alias startuiwatch="gowebui && switch-java 11 && lein refresh && shadow-cljs watch app"
-alias startwebapi="gowebapi && switch-java 1.8 && lein refresh repl"
+alias startwebapi="gowebapi && switch-java 1.8 && lein monolith unlink && lein refresh repl"
+alias startfoundationsapi="gofoundationsapi && switch-java 1.8 && lein monolith unlink && lein refresh repl"
 alias startwebapicampaigncore="gowebapi && switch-java 1.8 && lein monolith link campaign-core && lein refresh repl"
 
 [[ -f $HOME/.fzf.zsh ]] && . $HOME/.fzf.zsh
@@ -176,3 +179,5 @@ fi
 unset __mamba_setup
 micromamba activate pydev
 # <<< mamba initialize <<<
+
+source /Users/emmafu/.docker/init-zsh.sh || true # Added by Docker Desktop
