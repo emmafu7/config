@@ -57,6 +57,10 @@
   ;;nerdtree
   :preservim/nerdtree {}
 
+  ;; nvim OPENAI plugin
+  :nvim-lua/plenary.nvim {}
+  :CamdenClark/flyboy {}
+
   ;; parsing system
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
                                     :mod :treesitter}

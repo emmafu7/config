@@ -13,5 +13,6 @@ end
 local autoload = (require("aniseed.autoload")).autoload
 local theme = autoload("github-theme")
 do end (_2amodule_locals_2a)["theme"] = theme
-theme.setup({theme_style = "dark", comment_style = "italic"})
+theme.setup({options = {styles = {comments = "italic"}}})
+vim.cmd("colorscheme github_dark")
 return _2amodule_2a

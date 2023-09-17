@@ -108,7 +108,7 @@ alias gowebapi="cd $HOMEREPO/service/web/web-api"
 alias gofoundationsapi="cd $HOMEREPO/service/foundations/foundations-api"
 alias startuiwatch="gowebui && switch-java 11 && lein refresh && shadow-cljs watch app"
 alias startwebapi="gowebapi && switch-java 1.8 && lein monolith unlink && lein refresh repl"
-alias startfoundationsapi="gofoundationsapi && switch-java 1.8 && lein monolith unlink && lein refresh repl"
+alias startfoundationsapi="gofoundationsapi && switch-java 11 && lein monolith unlink && lein refresh repl"
 alias startwebapicampaigncore="gowebapi && switch-java 1.8 && lein monolith link campaign-core && lein refresh repl"
 
 [[ -f $HOME/.fzf.zsh ]] && . $HOME/.fzf.zsh
@@ -181,3 +181,13 @@ micromamba activate pydev
 # <<< mamba initialize <<<
 
 source /Users/emmafu/.docker/init-zsh.sh || true # Added by Docker Desktop
+export GODEBUG=asyncpreemptoff=1
+export TFENV_ARCH=amd64
+
+# Azure OpenAI API 
+export ENDPOINT_NAME="amperity-ue2"
+export OPENAI_API_BASE="https://$ENDPOINT_NAME.openai.azure.com"
+export OPENAI_API_KEY=$(vault read -field=key az-stage/secret/service/openai/$ENDPOINT_NAME)
+export OPENAI_TYPE=azure
+export OPENAI_API_VERSION="2023-03-15-preview"
+export OPENAI_DEPLOYMENT_NAME="gpt-4-2023-08-04"
