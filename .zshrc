@@ -185,9 +185,9 @@ export GODEBUG=asyncpreemptoff=1
 export TFENV_ARCH=amd64
 
 # Azure OpenAI API 
-export ENDPOINT_NAME="amperity-ue2"
-export OPENAI_API_BASE="https://$ENDPOINT_NAME.openai.azure.com"
-export OPENAI_API_KEY=$(vault read -field=key az-stage/secret/service/openai/$ENDPOINT_NAME)
-export OPENAI_TYPE=azure
-export OPENAI_API_VERSION="2023-03-15-preview"
-export OPENAI_DEPLOYMENT_NAME="gpt-4-2023-08-04"
+# export ENDPOINT_NAME="amperity-ue2"
+# export OPENAI_API_BASE="https://$ENDPOINT_NAME.openai.azure.com"
+# export OPENAI_API_KEY=$(vault read -field=key az-stage/secret/service/openai/$ENDPOINT_NAME)
+# export OPENAI_TYPE=azure
+# export OPENAI_API_VERSION="2023-03-15-preview"
+# export OPENAI_DEPLOYMENT_NAME="gpt-4-2023-08-04"
