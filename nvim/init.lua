@@ -8,7 +8,6 @@ local fn = vim.fn
 local pack_path = fn.stdpath("data") .. "/site/pack"
 local fmt = string.format
 
-
 function ensure (user, repo)
   -- Ensures a given github.com/USER/REPO is cloned in the pack/packer/start directory.
   local install_path = fmt("%s/packer/start/%s", pack_path, repo, repo)
@@ -38,3 +37,8 @@ require('flyboy.config').setup({
     Content_Type = "application/json"
   }
 })
+
+-- Remove trailing spaces
+vim.api.nvim_exec([[
+  autocmd BufWritePre *.md %s/\s\+$//e
+]], false)
